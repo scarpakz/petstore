@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 const axios = require('axios')
 const cors = require('cors');
 const bodyParser = require('body-parser')
@@ -13,6 +12,8 @@ const blocker = require('./dbquery/blocker')
 
 app.use(cors())
 app.use(bodyParser.json());
+
+const PORT = process.env.PORT || 3000;
 
 /**
  * GET QUERY
@@ -235,6 +236,6 @@ app.post('/delete-feeder-schedule', async (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-    console.log(`Server is listening at http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`Server listening at port ${PORT}`)
 })
