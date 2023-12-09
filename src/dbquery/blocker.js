@@ -3,10 +3,10 @@ class Blocker {
 
     constructor() {
         this.databaseConfig = {
-            host: 'localhost',
-            user: 'root',
-            password: 'root', // Change the password to blank if you're using WAMP
-            database: 'fws'
+            host: 'sql.freedb.tech',
+            user: 'freedb_userfeeder',
+            password: 'QkRJ#K9Q&&!ZWTy',
+            database: 'freedb_feeder'
         }
     }
 

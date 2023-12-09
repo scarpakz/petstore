@@ -3,10 +3,10 @@ class User {
 
     constructor() {
         this.databaseConfig = {
-            host: 'localhost',
-            user: 'root',
-            password: 'root',
-            database: 'fws'
+            host: 'sql.freedb.tech',
+            user: 'freedb_userfeeder',
+            password: 'QkRJ#K9Q&&!ZWTy',
+            database: 'freedb_feeder'
         }
     }
 
