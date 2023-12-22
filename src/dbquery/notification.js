@@ -31,11 +31,10 @@ class Notification {
     }
 
     async addNotification({header, message}) {
-        const currentDatetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
         // Use the currentDatetime in the INSERT query
-        const insertQuery = 'INSERT INTO notification (header, message, datetime) VALUES (?, ?, ?)';
-        const [result] = await conn.execute(insertQuery, [header, message, currentDatetime]);
+        const insertQuery = 'INSERT INTO notification (header, message) VALUES (?, ?)';
+        const [result] = await conn.execute(insertQuery, [header, message]);
         return result
     }
 }
