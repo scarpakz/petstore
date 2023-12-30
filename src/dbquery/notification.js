@@ -33,7 +33,7 @@ class Notification {
     async addNotification({header, message}) {
         const conn = await this.createConnection()
         // Use the currentDatetime in the INSERT query
-        const insertQuery = 'INSERT INTO notification (header, message) VALUES (?, ?)';
+        const insertQuery = 'INSERT INTO notification (header, message, date) VALUES (?, ?, NOW())';
         const [result] = await conn.execute(insertQuery, [header, message]);
         return result
     }
