@@ -34,7 +34,6 @@ class Notification {
         const conn = await this.createConnection()
         // Get the current datetime in JavaScript
         const currentDatetime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' });
-        console.log(currentDatetime)
 
         // Use the currentDatetime in the INSERT query
         const insertQuery = 'INSERT INTO notification (header, message, date) VALUES (?, ?, ?)';
