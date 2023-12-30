@@ -36,7 +36,7 @@ class Notification {
         const currentDatetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
         // Use the currentDatetime in the INSERT query
-        const insertQuery = 'INSERT INTO notification (header, message, created_at) VALUES (?, ?, ?)';
+        const insertQuery = 'INSERT INTO notification (header, message, date) VALUES (?, ?, ?)';
         const [result] = await conn.execute(insertQuery, [header, message, currentDatetime]);
         return result
     }
