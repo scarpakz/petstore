@@ -18,11 +18,25 @@ const PORT = process.env.PORT || 3000;
 /**
  * GET QUERY
  */
-app.get('/users', async (req, res) => {
+app.get('/findByStatus', async (req, res) => {
     try {
-        const response = await user.getUsers();
-        res.json(response)
+        /**
+         * Available
+         * Pending
+         * Sold
+         */
+        const status = req.query.status
+        axios
+        .get(`https://petstore3.swagger.io/api/v3/pet/findByStatus?status=${status}`)
+        .then((response) => {
+            res.json(response.data)
+        })
     } catch (e) {
         console.log(e)
     }
+})
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server listening at port ${PORT}`)
 })
